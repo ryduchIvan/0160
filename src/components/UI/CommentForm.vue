@@ -54,11 +54,10 @@ export default {
 				description: this.comment,
 				id: uniqid()
 			}
-			if (this.comment !== "") {
+			if (this.comment.trim() !== "") {
 				this.$emit("onSubmit", commentData)	
 				this.$toast.success("Comment was added successfully")
 			} else this.$toast.error("Empty comment")
-
 			this.comment = ""
 		}
 	}
